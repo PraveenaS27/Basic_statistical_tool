@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Columns for Analysis</title>
+</head>
+<body>
+    <h1>Select Columns to Analyze</h1>
+    <form method="post">
+        <label for="columns">Enter column numbers (e.g., 0, 1, 2):</label>
+        <input type="text" id="columns" name="columns" required><br><br>
+
+        <button type="submit">Analyze</button>
+    </form>
+    
+    <h2>Available Columns</h2>
+    <ul>
+        {% for column in columns %}
+        <li>{{ loop.index0 }}: {{ column }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

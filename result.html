@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+    <ul>
+        {% for result in results %}
+        <li>
+            <h2>Column: {{ result.column }}</h2>
+            {% if result.error %}
+            <p>{{ result.error }}</p>
+            {% else %}
+            <p>Count: {{ result.count }}</p>
+            <p>Mean: {{ result.mean }}</p>
+            <p>Median: {{ result.median }}</p>
+            <p>Standard Deviation: {{ result.std_dev }}</p>
+            <p>Variance: {{ result.variance }}</p>
+            <p>Max: {{ result.max_value }}</p>
+            <p>Min: {{ result.min_value }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
